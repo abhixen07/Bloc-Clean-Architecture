@@ -2,8 +2,9 @@ import 'package:bloc_clean_coding/config/components/internet_exception_widget.da
 import 'package:bloc_clean_coding/config/components/loading_widget.dart';
 import 'package:bloc_clean_coding/config/components/round_button.dart';
 import 'package:bloc_clean_coding/config/routes/routes_name.dart';
-import 'package:bloc_clean_coding/services/splash_services.dart';
+import 'package:bloc_clean_coding/services/splash/splash_services.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -26,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Text('Splash Screen'),
+          child: Text('Splash Screen',style: GoogleFonts.montserrat(fontSize: 20)),
         ),
       ),
     );
