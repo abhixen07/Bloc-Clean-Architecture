@@ -18,7 +18,7 @@ class NetworkApiServices implements BaseApiServices {
       //if we do not do this then this process repeat in every class
       //when we hit api
       final response =
-      await http.get(Uri.parse(url)).timeout( Duration(seconds: 50));
+      await http.get(Uri.parse(url)).timeout( Duration(seconds: 10));
       responseJson = returnResponse(response);
     } on SocketException {
       //socket exception in no internet exception

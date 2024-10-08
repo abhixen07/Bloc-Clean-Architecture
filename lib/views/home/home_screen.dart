@@ -5,6 +5,7 @@ import 'package:bloc_clean_coding/services/storage/local_storage.dart';
 import 'package:bloc_clean_coding/utils/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../main.dart';
 
@@ -43,8 +44,11 @@ class _MoviesScreenState extends State<MoviesScreen> {
       value: moviesBloc, // Use the existing bloc instance
       child: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           automaticallyImplyLeading: false,
-          title: const Text('Popular Shows'),
+          // title: Text('Popular Shows',style: GoogleFonts.montserrat(),),
+          title: Text('مشہور شوز',style: GoogleFonts.notoNastaliqUrdu(),),
+          backgroundColor: Colors.grey,
           actions: [
             IconButton(
               onPressed: () {
@@ -58,7 +62,6 @@ class _MoviesScreenState extends State<MoviesScreen> {
               },
               icon: const Icon(Icons.logout_outlined),
             ),
-            const SizedBox(width: 20)
           ],
         ),
         body: BlocBuilder<MoviesBloc, MoviesState>(
@@ -70,19 +73,20 @@ class _MoviesScreenState extends State<MoviesScreen> {
                 return const Center(child: CircularProgressIndicator());
 
               case Status.ERROR:
-                if (state.moviesList.message == 'No Internet Connection') {
+                // if (state.moviesList.message == 'No Internet Connection') {
+                  print('Current state: ${state.moviesList.status}'); // Debugging line
                   return InternetExceptionWidget(
                     onPress: () {
                       moviesBloc.add(MoviesFetch());
                     },
                   );
-                }
-                return Center(child: Text(state.moviesList.message.toString()));
+                // }
+                // return Center(child: Text(state.moviesList.message.toString()));
 
               case Status.COMPLETED:
                 if (state.moviesList.data == null || state.moviesList.data!.tvShow.isEmpty) {
                   // No data found, displaying a message
-                  return const Center(child: Text('No Data Found'));
+                  return Center(child: Text('No Data Found',style: GoogleFonts.montserrat(),));
                 }
                 final movieList = state.moviesList.data!;
 
@@ -98,13 +102,14 @@ class _MoviesScreenState extends State<MoviesScreen> {
                     print('Show name: ${tvShow.name}');
 
                     return Card(
+                      // color: Colors.grey,
                       child: ListTile(
                         leading: tvShow.imageThumbnailPath != null && tvShow.imageThumbnailPath.isNotEmpty
                             ? Image.network(tvShow.imageThumbnailPath.toString())
                             : const Icon(Icons.image_not_supported),
-                        title: Text(tvShow.name ?? 'Unknown Title'), // Provide a default value if null
-                        subtitle: Text(tvShow.network ?? 'Unknown Network'), // Provide a default value if null
-                        trailing: Text(tvShow.status ?? 'Unknown Status'), // Provide a default value if null
+                        title: Text(tvShow.name,style: GoogleFonts.montserrat(fontWeight: FontWeight.bold),), // Provide a default value if null
+                        subtitle: Text(tvShow.network,style: GoogleFonts.montserrat(fontSize: 12),), // Provide a default value if null
+                        trailing: Text(tvShow.status,style: GoogleFonts.montserrat(fontSize: 11),), // Provide a default value if null
                       ),
 
                     );
