@@ -1,4 +1,4 @@
-import 'package:bloc_clean_coding/models/user_model.dart';
+import 'package:bloc_clean_coding/models/user/user_model.dart';
 import 'package:bloc_clean_coding/repository/auth/login_repository.dart';
 
 class LoginMockApiRepository implements LoginRepository {

@@ -1,5 +1,5 @@
 import 'dart:convert'; // Importing dart:convert for JSON encoding and decoding
-import 'package:bloc_clean_coding/models/user_model.dart';
+import 'package:bloc_clean_coding/models/user/user_model.dart';
 import 'package:flutter/material.dart'; // Importing Flutter material library
 import '../storage/local_storage.dart'; // Importing local storage for storing user data
 

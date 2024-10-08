@@ -1,6 +1,6 @@
-import 'package:bloc_clean_coding/bloc/login_bloc.dart';
+import 'package:bloc_clean_coding/bloc/login/login_bloc.dart';
 import 'package:bloc_clean_coding/main.dart';
-import 'package:bloc_clean_coding/models/user_model.dart';
+import 'package:bloc_clean_coding/models/user/user_model.dart';
 import 'package:bloc_clean_coding/repository/auth/login_repository.dart';
 import 'package:bloc_clean_coding/views/login/widgets/email_input_widget.dart';
 import 'package:bloc_clean_coding/views/login/widgets/login_button.dart';

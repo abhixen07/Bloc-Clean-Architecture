@@ -1,4 +1,4 @@
-import 'package:bloc_clean_coding/bloc/login_bloc.dart';
+import 'package:bloc_clean_coding/bloc/login/login_bloc.dart';
 import 'package:bloc_clean_coding/config/routes/routes_name.dart';
 import 'package:bloc_clean_coding/utils/enums.dart';
 import 'package:bloc_clean_coding/utils/flush_bar_helper.dart';

@@ -1,4 +1,4 @@
-import 'package:bloc_clean_coding/bloc/login_bloc.dart';
+import 'package:bloc_clean_coding/bloc/login/login_bloc.dart';
 import 'package:bloc_clean_coding/utils/validations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
